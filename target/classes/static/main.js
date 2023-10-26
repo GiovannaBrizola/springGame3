@@ -71,30 +71,3 @@ function atualizarJogo() {
         alert('ID não encontrado na base de dados. Nenhum jogo foi alterado. Favor pesquisar jogo a ser alterado!');
     }
 }
-
-function deletarJogo() {
-    pesquisarJogo();
-    if (result == 1) {
-        const name = document.getElementById('name').value;
-        const plataform = document.getElementById('plataform').value;
-        const searchId = document.getElementById('searchId').value;
-
-        fetch(`http://localhost:8090/jogos/${searchId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, plataform }),
-        })
-            .then(response => response.json())
-            .then(data => {
-                alert('Jogo deletado com sucesso!');
-                document.getElementById('cadastroForm').reset();                
-            })
-            .catch(error => {
-                console.error('Erro ao deletar jogo:', error);
-            });
-    } else {
-        alert('ID não encontrado na base de dados. Nenhum jogo foi deletado. Favor pesquisar jogo para ser deletado!');
-    }
-}
