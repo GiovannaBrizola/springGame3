@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Pesquisa de Jogos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<center>
+<body class="fundo">
+    <h1 class="titulo">🎮Cadastro e Pesquisa de Jogos🎮</h1>
+    <div class="divmain">
+    <div id="cadastro">
+        <h2>Cadastro de Jogo</h2>
+        <form id="cadastroForm">
+            <label for="name">Nome:</label>
+            <p></p>
+            <input type="text" id="name" name="name" required><br>
+            <p></p>
+            <label for="plataform">Plataforma:</label>
+            <p></p>
+            <input type="text" id="plataform" name="plataform" required><br>
+            <p></p>
+            <button type="submit">Cadastrar</button>
+            <button type="button" onclick="atualizarJogo()">Atualizar</button>
+            <button type="button" onclick="deletarJogo()">Deletar</button>
+        </form>
+    </div>
+    <div id="pesquisa">
+        <br></br>
+        
+        <h2>Pesquisa de Jogo</h2>
+        <form id="pesquisaForm">
+            <label for="searchId">ID do Jogo:</label>
+            <p></p>
+            <input type="text" id="searchId" name="searchId"><br>
+            <p></p>
+            <button type="button" onclick="pesquisarJogo()">Pesquisar</button>
+        </form>
+        <div id="resultadoPesquisa"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</center>
+</html>
